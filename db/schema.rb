@@ -13,20 +13,20 @@
 
 ActiveRecord::Schema.define(version: 20160308143322) do
 
-  create_table "runners", force: :cascade do |t|
-    t.string   "runnername"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "password_digest"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.boolean  "like"
     t.integer  "runner_id"
     t.integer  "shoe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "runners", force: :cascade do |t|
+    t.string   "runnername"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
   create_table "shoes", force: :cascade do |t|
