@@ -1,0 +1,21 @@
+<%= render 'shared/errors', obj: @runner %>
+
+<div class="row">
+  <div class="well col-md-8 col-offset-2">
+    <%= form_for @runner do |f| %>
+      <%= f.label :runnername %>
+      <%= f.text_field :runnername %>
+      
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+     
+      <%= f.submit(@runner.new_record? ? 'Register New Runner' : 'Edit Profile', class: "btn btn-success") %>
+      
+    <% end %>
+    
+  </div>
+  
+</div>

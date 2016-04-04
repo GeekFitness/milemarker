@@ -1,0 +1,36 @@
+<header class="navbar navbar-fixed-top navbar-default">
+    <div class="container">
+      <%= link_to "myShoes", root_path, class: "btn btn-large btn-success", id: "logo" %>
+          <div class="nav_item">
+            <%= link_to "All Shoes", shoes_path, class: "btn btn-default btn-warning" %>
+          </div>
+          <div class="nav_item">
+            <%= link_to "Empty Link", "", class: "btn btn-default btn-warning" %>
+          </div>
+
+
+
+          <% if logged_in? %>
+            <div class="nav_item">
+              <%= link_to "New Shoe!", new_shoe_path, class: "btn btn-default btn-warning" %>
+            </div>
+            <ul class="nav_item">
+              <li class="dropdown">
+                <%= link_to "#", class: "btn btn-default btn-danger droptown-toggle", "data-toggle" => "dropdown" do %>
+                  <%= current_user.runnername %> <b class="caret"></b>
+                <% end %>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "View Profile", runner_path(current_user) %></li>
+                  <li><%= link_to "Edit Profile", edit_runner_path(current_user) %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Logout", logout_path %></li>
+                </ul>
+              </li>
+            </ul>
+          <% else %>
+            <div class="nav_item">
+              <%= link_to "Login", login_path, class: "btn btn-default btn-success" %>
+            </div>
+          <% end %>
+      </div>
+</header>

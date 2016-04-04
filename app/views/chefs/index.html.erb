@@ -1,0 +1,26 @@
+<%= render 'shared/page_title', title: 'All Runners' %>
+
+<ul class="nav nav-tabs">
+  <li class=>
+    <%= link_to "Shoes", shoes_path %>
+  </li>
+  <li class="active">
+    <%= link_to "Runners", runners_path %>
+  </li>
+</ul>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 center">
+    <%= will_paginate %>
+  </div>
+</div>
+
+<% @runners.each do |runner| %>
+  <div class="row">
+  <div class="col-md-4 col-md-offset-4 center">
+    <%= link_to gravatar_for(runner, size: 200), runner_path(runner) %>
+    <p><h5>Runner name: <%= runner.runnername %></h5></p>
+  </div>
+</div>
+
+<% end %>
