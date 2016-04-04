@@ -1,0 +1,37 @@
+<%= render 'shared/page_title', title: @shoe.name %>
+
+<div class="row">
+  <div class="col-md-4 pull-right center">
+    <%= link_to gravatar_for(@shoe.runner, size: 200), runner_path(@shoe.runner) %>
+      <p>
+        <h5>Brought to you by: <%= @shoe.runner.runnername %></h5>
+      </p>
+  </div>
+  
+  <div class="col-md-8">
+    <% if logged_in? and @shoe.runner == current_user %>
+      <%= link_to "Edit This Shoe", edit_shoe_path(@shoe), class: "btn btn-success pull-right" %>
+    <% end %>
+    <h3><%= @shoe.summary %></h3>
+    <div class="show_shoe">
+      <%= image_tag(@shoe.picture.url, class: "gravatar") if @shoe.picture? %>
+    </div>
+      <div class="well">
+        <p>
+          <strong>Steps:</strong>
+        </p>
+        <%= simple_format(@shoe.description) %>
+        <div class="pull-right">
+          <%= link_to like_shoe_path(@shoe, like: true), method: :post do %>
+            <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @shoe.thumbs_up_total %>
+          <% end %> &nbsp&nbsp&nbsp&nbsp
+          <%= link_to like_shoe_path(@shoe, like: false), method: :post do %>
+            <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @shoe.thumbs_down_total %>
+          <% end %>
+        </div>
+      </div>
+  </div>
+  
+</div>
+
+<h5><%= link_to "Return to Shoes Listing", shoes_path, class: "btn btn-warning btn-small" %></h5>
