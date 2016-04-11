@@ -2,3 +2,11 @@ Ongoing project for Milemarker, a running shoe tracking app.
 ===
 
 Users will be able to track the life of their running shoes in a personal database, upload photos, and compare their mileage to other users to ensure they get the maximum life out of their shoes.
+---
+
+Next up:
+ * Replace "Summary" with the "Miles" tag and have it use the sum from Runs table.
+ * Remove "Summary" from the "Create Shoe" form
+ * Create "Add Runs" to shoe page
+ 
+ 
