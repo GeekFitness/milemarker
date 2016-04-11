@@ -10,3 +10,12 @@ Next up:
  * Create "Add Runs" to shoe page
  
  
+ 
+ Validation for Runs:
+ ---
+ 
+ - runner_id must be present
+ - shoe_id must be present
+ - run_date must be present
+ - miles must be present
+ - miles must be greater than .1

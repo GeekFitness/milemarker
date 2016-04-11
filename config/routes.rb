@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   end
   
   resources :runners, except: [:new]
+  resources :runs 
   
   get '/register', to: 'runners#new'
   
   get '/login', to: 'logins#new'
   post '/login', to: 'logins#create'
   get '/logout', to: 'logins#destroy'
+  
   
 end

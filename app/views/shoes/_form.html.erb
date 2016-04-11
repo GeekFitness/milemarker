@@ -3,20 +3,17 @@
 <div class="row">
   <div class="well col-md-8 col-offset-2">
     <%= form_for(@shoe, html: { multipart: true }) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.label "Shoe Brand and Model" %>
+      <%= f.text_field :name, :placeholder => "ex. Asics Gel-NIMBUS 17 or Saucony Kinvara 4" %>
       
-      <%= f.label :summary %>
-      <%= f.text_field :summary %>
-      
-      <%= f.label :description %>
-      <%= f.text_area :description, rows: 10 %>
+      <%= f.label "Shoe Information" %>
+      <%= f.text_area :description, rows: 10, :placeholder => "Color, Size, Date Purchased, etc." %>
       
       <span class="picture">
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
       </span>
       
-      <%= f.submit(@shoe.new_record? ? 'Create Shoe' : 'Edit Shoe', class: "btn btn-success") %>
+      <%= f.submit(@shoe.new_record? ? 'Save Your Running Shoe' : 'Edit Your Running Shoe', class: "btn btn-success") %>
       
     <% end %>
     

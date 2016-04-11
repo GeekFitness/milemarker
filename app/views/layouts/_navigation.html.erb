@@ -5,14 +5,14 @@
             <%= link_to "All Shoes", shoes_path, class: "btn btn-default btn-warning" %>
           </div>
           <div class="nav_item">
-            <%= link_to "Empty Link", "", class: "btn btn-default btn-warning" %>
+            <%= link_to "Log Your Run!", new_run_path, class: "btn btn-default btn-warning" %>
           </div>
 
 
 
           <% if logged_in? %>
             <div class="nav_item">
-              <%= link_to "New Shoe!", new_shoe_path, class: "btn btn-default btn-warning" %>
+              <%= link_to "Create A New Running Shoe!", new_shoe_path, class: "btn btn-default btn-warning" %>
             </div>
             <ul class="nav_item">
               <li class="dropdown">
