@@ -1,0 +1,20 @@
+<%= render 'shared/errors', obj: @run %>
+
+<div class="row">
+  <div class="well col-md-8 col-offset-2">
+    <%= form_for @run do |f| %>
+      <%= f.label "How long was your run?" %>
+      <%= f.text_field :run_distance %> <!-- How do I create this method? -->
+
+      <div class="form-group">
+        <%= f.label "Which shoes were you wearing?" %> 
+        <%= f.select(:shoes, options_for_select([[@shoe.name, 1], [@shoe.name, 2]]), {}, {class: "form-control"}) %>
+      </div>
+     
+      <%= f.submit(@run.new_record? 'Add run to selected shoe', class: "btn btn-success") %>
+      
+    <% end %>
+    
+  </div>
+  
+</div>

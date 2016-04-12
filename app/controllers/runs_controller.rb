@@ -1,5 +1,7 @@
 class RunsController < ApplicationController
-  
+  before_action :set_run, only: [:edit, :update, :show, :like]
+  before_action :require_user, except: [:show, :index]
+  before_action :require_same_user, only: [:edit, :update]
   
   def new
     @run = Run.new
@@ -17,7 +19,7 @@ class RunsController < ApplicationController
     @run.runner = current_user
     
     if @run.save
-      flash[:success] = "You successfully added a run to your shoe! Yay!"
+      flash[:success] = "You successfully logged your run! Yay!"
       redirect_to shoes_path
     else
       render :new
@@ -30,7 +32,7 @@ class RunsController < ApplicationController
   def update
     if @run.update(run_params)
       flash[:success] = "You updated your run successfully! Yay!"
-      redirect_to shoe_path(@shoe)
+      redirect_to run_path(@run)
     else
       render :edit
     end
@@ -42,7 +44,7 @@ class RunsController < ApplicationController
 private
   
   def run_params
-    params.require(:run).permit(:name, :summary, :description, :picture)
+    params.require(:run).permit(:run_distance, :shoe_id)
   end
     
   def set_run

@@ -1,7 +1,7 @@
 class CreateRuns < ActiveRecord::Migration
   def change
     create_table :runs do |t|
-      t.decimal :miles
+      t.decimal :run_distance
       t.integer :run_id
       t.integer :shoe_id
       t.integer :runner_id

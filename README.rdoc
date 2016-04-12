@@ -5,17 +5,9 @@ Users will be able to track the life of their running shoes in a personal databa
 ---
 
 Next up:
+ * Create method for the new run form that includes run_distance
  * Replace "Summary" with the "Miles" tag and have it use the sum from Runs table.
  * Remove "Summary" from the "Create Shoe" form
  * Create "Add Runs" to shoe page
  
  
- 
- Validation for Runs:
- ---
- 
- - runner_id must be present
- - shoe_id must be present
- - run_date must be present
- - miles must be present
- - miles must be greater than .1

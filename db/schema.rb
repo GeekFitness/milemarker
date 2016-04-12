@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411164357) do
+ActiveRecord::Schema.define(version: 20160412123300) do
 
   create_table "likes", force: :cascade do |t|
     t.boolean  "like"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160411164357) do
   end
 
   create_table "runs", force: :cascade do |t|
-    t.decimal  "miles"
+    t.decimal  "run_distance"
     t.integer  "run_id"
     t.integer  "shoe_id"
     t.integer  "runner_id"
